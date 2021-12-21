@@ -1,0 +1,15 @@
+-- Initial SQL's to Start User Service.
+-- Inserting Roles and Creating Portal Admin User
+
+-- Insert Roles
+INSERT INTO roles(id, role_name) VALUES (1, 'CITIZEN');
+INSERT INTO roles(id, role_name) VALUES (2, 'HOSPITAL_ADMIN');
+INSERT INTO roles(id, role_name) VALUES (3, 'VACCINATION_ADMIN');
+INSERT INTO roles(id, role_name) VALUES (4, 'PORTAL_ADMIN');
+
+-- Create Portal Admin User
+INSERT INTO users(user_login_id, password, city_name, pin_code)
+VALUES ('portalAdmin', 'portalAdmin@123', 'Bangalore', '560001');
+
+INSERT INTO users_roles(users_id, roles_id)
+VALUES ('portalAdmin', 4);
